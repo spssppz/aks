@@ -1,0 +1,337 @@
+.blog{
+    padding-bottom: 120px;
+}
+.posts-list{
+    margin:  0 -10px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.posts-list__item{
+    width: calc(100% / 12 * 4 - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 68px;
+   
+    
+}
+
+.posts-list__img{
+    height: 263px;
+    overflow: hidden;
+}
+
+.posts-list__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.posts-list__title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    color: #3A3A3A;
+    transition: color 0.5s ease-in-out;
+    margin: 20px 0 10px;
+}
+.posts-list__date{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.09em;
+    color: #6F6F6F;
+    margin: 0;
+}
+
+.posts-list__link{
+    display: block;
+    text-decoration: none;
+}
+
+.posts-list__link:hover .posts-list__title{
+    color: #E5343D;
+}
+
+.posts-list__link:hover .posts-list__img img{
+    transform: scale(1.05);
+}
+
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pagination__item{
+    color: #6C6C6C;
+   
+}
+
+.pagination__item.is-active a{
+    border: 1px solid #E5343D;
+    color: #3A3A3A;
+}
+
+.pagination__item a{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #6C6C6C;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.pagination__item a:hover{
+    color: #3A3A3A;
+}
+
+.post-page__row{
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.content-post{
+    width: calc(100% / 12 * 8 - 40px);
+    min-height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.post-page__sidebar{
+    width: calc(100% / 12 * 4 - 40px);
+    min-height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.post-page{
+    padding: 60px 0;
+}
+
+.post-page ul.breadcrumb{
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.content-post img:first-child{
+    max-height: 500px;
+}
+
+.content-post img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-post__publick{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.09em;
+    color: #6F6F6F;
+    margin: 0;
+}
+
+.content-post__title{
+    margin-top: 9px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    color: #3A3A3A;
+}
+
+
+.content-post__title::after {
+    content: '';
+    display: block;
+    width: 140px;
+    height: 6px;
+    background-color: var(--accept-color);
+    margin-top: 20px;
+}
+
+.content-post h2,
+.content-post h3,
+.content-post h4, 
+.content-post h5{
+    margin-bottom: 10px;
+}
+
+.content-post p{
+    margin-top: 0;
+}
+
+.post-page__sidebar{
+    
+}
+
+.sidebar-inner{
+    background: #F5F5F5;
+    padding-top: 22px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.sidebar__title{
+    margin: 0 0x 20px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #555555;
+}
+
+
+.interesting-list{
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0 0;
+}
+.interesting-list__item{
+    margin-bottom: 14px;
+}
+.interesting-list__link{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+.interesting-list__img{
+    width: 195px;
+    height: 131px;
+    flex-shrink: 0;
+    margin-right: 16px;
+    overflow: hidden;
+}
+
+.interesting-list__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.interesting-list__info{
+
+}
+.interesting-list__date{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.09em;
+    color: #6F6F6F;
+}
+.interesting-list__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3A3A3A;
+    margin: 0;
+    transition: color 0.5s ease-in-out;
+}
+
+.interesting-list__link:hover .interesting-list__title{
+    color: #E5343D;
+}
+
+.interesting-list__link:hover .interesting-list__img img{
+    transform: scale(1.05);
+}
+
+
+@media(max-width:1250px){
+    .interesting-list__img {
+        width: 135px;
+        height: 70px;
+    }
+
+    .interesting-list__title{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:992px) {
+    .post-page__row{
+        flex-wrap: wrap;
+    }
+
+    .content-post {
+        width: calc(100% / 12 * 12 - 40px);
+    }
+
+
+    .post-page__sidebar {
+        margin-top: 60px;
+        width: calc(100% / 12 * 12 - 40px);
+    }
+
+    .interesting-list{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .interesting-list__item{
+        margin-left: 15px;
+        margin-right: 15px;
+        width: calc(100% / 12 * 6 - 30px);
+        flex-basis: 349px;
+        flex-grow: 1;
+    }
+
+    .inner-wrapper-sticky{
+        position: relative!important;
+       top: auto!important;
+       left: auto!important;
+       bottom: auto!important;
+       right: auto!important;
+       transform: none!important;
+       width: auto !important;
+    }
+    
+    .posts-list__item {
+        flex-basis:340px;
+        flex-grow:1;
+    }
+
+}
+
+
+@media(max-width:780px){
+    .content-post__title {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+@media(max-width:578px){
+    .pagination__item a{
+        font-size: 20px;
+    }
+}
+
