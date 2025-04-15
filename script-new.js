@@ -173,29 +173,41 @@ const tabs = () => {
 	}
 
 	function setTabsAction(e) {
-		const el = e.target
+		const el = e.target;
 		if (el.closest('[data-tabs-title]')) {
-			const tabTitle = el.closest('[data-tabs-title]')
-			const tabsBlock = tabTitle.closest('[data-tabs]')
-			const isSpollerMode = tabsBlock.classList.contains('_tab-spoller')
-			const isActive = tabTitle.classList.contains('_tab-active')
+			const tabTitle = el.closest('[data-tabs-title]');
+			const tabsBlock = tabTitle.closest('[data-tabs]');
+			const isSpollerMode = tabsBlock.classList.contains('_tab-spoller');
+			const isActive = tabTitle.classList.contains('_tab-active');
 
 			if (!tabsBlock.querySelector('._slide')) {
 				if (isSpollerMode && isActive) {
-					tabTitle.classList.remove('_tab-active')
-					setTabsStatus(tabsBlock)
+					tabTitle.classList.remove('_tab-active');
+					setTabsStatus(tabsBlock);
 				} else {
-					let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active')
+					let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
 					tabActiveTitle = Array.from(tabActiveTitle).filter(item =>
-						item.closest('[data-tabs]') === tabsBlock)
-					if (tabActiveTitle.length) tabActiveTitle[0].classList.remove('_tab-active')
-					tabTitle.classList.add('_tab-active')
-					setTabsStatus(tabsBlock)
+						item.closest('[data-tabs]') === tabsBlock);
+					if (tabActiveTitle.length) tabActiveTitle[0].classList.remove('_tab-active');
+					tabTitle.classList.add('_tab-active');
+					setTabsStatus(tabsBlock);
+
+					// 👉 Мгновенный скролл с учётом фиксированной шапки
+					if (isSpollerMode) {
+						setTimeout(() => {
+							const header = document.querySelector('header');
+							const headerHeight = header ? header.offsetHeight : 0;
+							const offsetTop = tabTitle.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+							window.scrollTo(0, offsetTop);
+						}, 0);
+					}
 				}
 			}
-			e.preventDefault()
+			e.preventDefault();
 		}
 	}
+
+
 }
 
 tabs()
